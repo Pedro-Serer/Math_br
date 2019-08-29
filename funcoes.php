@@ -11,41 +11,17 @@
   *
   * @version 1.0.0
   *
+  */
+
+
+  /**
+  *  Função exponencial
   *
-  * * Função exponencial
-  * *
   * * @param int|int [Base, Expoente] Elemento base elevado ao expoente.
   * * @return int Retorna um inteiro da potência.
   *
-  *
-  * * Função tabela logaritimo
-  * *
-  * * @param int A entrada necessita ser um inteiros .
-  * * @return int Retorna o somatório de todos os dados de entrada.
-  *
-  *
-  * * Função de fatoração
-  * *
-  * * @param int A entrada é um inteiro incrementada de maneira recursiva.
-  * * @return int[] O retorno é um array de inteiros de todos os fatores.
-  *
-  *
-  * * Função logarítimica básica
-  * *
-  * * @param mixed|mixed|mixed [Base, Logaritimando, Logaritimo] Os dados de entrada podem ser do tipo char ou inteiro para interagir na função.
-  * * @return mixed Retorna um tipo int se houver um cáculo válido ou um char caso não houver.
-  *
-  *
-  * * Função afim
-  * *
-  * * @param mixed|mixed|mixed|mixed| [Incógnita, Coeficiênte angular, Coeficiênte Linear, Valor do domínio] Os dados de entrada podem ser do tipo char ou int.
-  * * @return mixed Retorna um tipo int se houver um cáculo válido ou um char caso não houver.
-  *
-  *
-  *
   */
 
-  /*Função de exponenciação*/
   function exp_br($base, $expoente)
   {
     $res = $base;
@@ -69,7 +45,14 @@
     return $res;
   }
 
-  /*Tabela dos logarítimos do 1 ao 11*/
+  /**
+  *  Tabela dos logarítimos do 1 ao 11
+  *
+  * * @param int A entrada necessita ser um inteiros .
+  * * @return int Retorna o somatório de todos os dados de entrada.
+  *
+  */
+
   function tabela_log_br($fatores)
   {
     $resultado = 0;
@@ -117,7 +100,14 @@
     return $resultado;
   }
 
-  /*Função que fatora um número*/
+  /**
+  *  Função que fatora um número
+  *
+  * * @param int A entrada é um inteiro incrementada de maneira recursiva.
+  * * @return int[] O retorno é um array de inteiros de todos os fatores.
+  *
+  */
+
   function fatoracao($num)
   {
     if ($num < 2)
@@ -146,6 +136,15 @@
   }
 
   /*Função que calcula o lagaritimo*/
+
+  /**
+  *  Função logarítimica básica
+  *
+  * * @param mixed|mixed|mixed [Base, Logaritimando, Logaritimo] Os dados de entrada podem ser do tipo char ou inteiro para interagir na função.
+  * * @return mixed Retorna um tipo int se houver um cáculo válido ou um char caso não houver.
+  *
+  */
+
   function log_br($base, $logaritimando, $logaritimo)
   {
     if ((($base !== 'X') && (gettype($base) !== 'integer') && (gettype($x) !== 'double'))
@@ -193,7 +192,14 @@
     }
   }
 
-  /*Função afim*/
+  /**
+  *  Função afim
+  *
+  * * @param mixed|mixed|mixed|mixed| [Incógnita, Coeficiênte angular, Coeficiênte Linear, Valor do domínio] Os dados de entrada podem ser do tipo char ou int.
+  * * @return mixed Retorna um tipo int se houver um cáculo válido ou um char caso não houver.
+  *
+  */
+  
   function func_afim_br($x, $a, $b, $fx){
     if ((($x !== 'X') && (gettype($x) !== 'integer') && (gettype($x) !== 'double'))
       || (($a !== 'X') && (gettype($a) !== 'integer') && (gettype($a) !== 'double')
