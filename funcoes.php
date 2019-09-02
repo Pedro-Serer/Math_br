@@ -115,13 +115,11 @@
       return [];
     }
 
-    $numeros = array(2, 3, 4, 5, 6, 7, 8, 9);
-
-    for ($i=0; $i < 8; $i++)
+    for ($i=2; $i <= $num; $i++)
     {
-      if ($num % $numeros[$i] == 0)
+      if ($num % $i == 0)
       {
-        $fator = $numeros[$i];
+        $fator = $i;
 
         if ($num > 1)
         {
@@ -135,12 +133,10 @@
     }
   }
 
-  /*Função que calcula o lagaritimo*/
-
   /**
   *  Função logarítimica básica
   *
-  * * @param mixed|mixed|mixed [Base, Logaritimando, Logaritimo] Os dados de entrada podem ser do tipo char ou inteiro para interagir na função.
+  * * @param mixed|mixed|mixed [Base, Logaritimando, Logaritimo] Os dados de entrada podem ser do tipo char ou int para interagir na função.
   * * @return mixed Retorna um tipo int se houver um cáculo válido ou um char caso não houver.
   *
   */
@@ -199,7 +195,7 @@
   * * @return mixed Retorna um tipo int se houver um cáculo válido ou um char caso não houver.
   *
   */
-  
+
   function func_afim_br($x, $a, $b, $fx){
     if ((($x !== 'X') && (gettype($x) !== 'integer') && (gettype($x) !== 'double'))
       || (($a !== 'X') && (gettype($a) !== 'integer') && (gettype($a) !== 'double')
@@ -223,5 +219,76 @@
         return ($a * $x) + $b;
       }
     }
+  }
+
+  /**
+  * Função que calcula o teorema de pitágoras
+  *
+  * * @param int|int [b², c²] b e c são catetos oposto e adjacente.
+  * * @return int o retorno é um int contendo o valor de a².
+  *
+  */
+
+  function pitagoras_br($b, $c)
+  {
+    return (exp_br($b, 2)) + (exp_br($c, 2));
+  }
+
+  /**
+  * Função que calcula raiz quadrada
+  *
+  * * @param int Um número do tipo int maior que zero
+  * * @return int Int da raiz do número de entrada
+  *
+  */
+
+  function sqrt_br($num)
+  {
+    if($num != 1)
+    {
+      $matrix = [[]];
+      for ($i=1; $i < $num ; $i++)
+      {
+        for ($j=1; $j <= 101; $j++)
+        {
+          $matrix[$i][$j] = exp_br(floatval($i.".".$j), 2);
+          if($matrix[$i][$j] > $num && $j > 10)
+          {
+            if (($j) == 11)
+            {
+              return floatval("$i.00");
+            } else
+            {
+              return floatval($i.".".($j-1));
+            }
+          }
+        }
+      }
+    } else
+    {
+      return 1;
+    }
+  }
+
+  /**
+  * Função da equação do segundo grau
+  *
+  * * @param int|int|int [ax², b, c] Todos do tipo int
+  * * @return int[] Retorna um array com os valores de x1 e x2
+  *
+  */
+
+  function segundo_grau_br($a, $b, $c)
+  {
+    $delta = ($b * $b) - (4 *
+      ($a * $c)
+    );
+
+    $x1 = (-$b +
+      sqrt_br($delta)) / (2 * $a);
+    $x2 = (-$b -
+      sqrt_br($delta)) / (2 * $a);
+
+    return [$x1, $x2];
   }
 ?>
