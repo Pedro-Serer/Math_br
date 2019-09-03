@@ -24,25 +24,7 @@
 
   function exp_br($base, $expoente)
   {
-    $res = $base;
-
-    if($expoente < 0)
-    {
-      $expoente = $expoente * (-1);
-      for ($i=1; $i < $expoente; $i++)
-      {
-        $res *= $base;
-      }
-
-      $res = 1 / $res;
-    } else{
-      for ($i=1; $i < $expoente; $i++)
-      {
-        $res *= $base;
-      }
-    }
-
-    return $res;
+        return bcpow($base,$expoente);
   }
 
   /**
@@ -244,30 +226,7 @@
 
   function sqrt_br($num)
   {
-    if($num != 1)
-    {
-      $matrix = [[]];
-      for ($i=1; $i < $num ; $i++)
-      {
-        for ($j=1; $j <= 101; $j++)
-        {
-          $matrix[$i][$j] = exp_br(floatval($i.".".$j), 2);
-          if($matrix[$i][$j] > $num && $j > 10)
-          {
-            if (($j) == 11)
-            {
-              return floatval("$i.00");
-            } else
-            {
-              return floatval($i.".".($j-1));
-            }
-          }
-        }
-      }
-    } else
-    {
-      return 1;
-    }
+    return bcsqrt($num);
   }
 
   /**
